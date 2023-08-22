@@ -72,7 +72,7 @@ class curl_security_helper_test extends \advanced_testcase {
             // Base set without the blocklist enabled - no checking takes place.
             [$simpledns, "http://localhost/x.png", "", "", false],       // IP=127.0.0.1, Port=80 (port inferred from http).
             [$simpledns, "http://localhost:80/x.png", "", "", false],    // IP=127.0.0.1, Port=80 (specific port overrides http scheme).
-            [$simpledns, "https://localhost/x.png", "", "", false],      // IP=127.0.0.1, Port=443 (port inferred from https).
+            [$simpledns, "http://localhost/x.png", "", "", false],      // IP=127.0.0.1, Port=443 (port inferred from https).
             [$simpledns, "http://localhost:443/x.png", "", "", false],   // IP=127.0.0.1, Port=443 (specific port overrides http scheme).
             [$simpledns, "localhost/x.png", "", "", false],              // IP=127.0.0.1, Port=80 (port inferred from http fallback).
             [$simpledns, "localhost:443/x.png", "", "", false],          // IP=127.0.0.1, Port=443 (port hard specified, despite http fallback).

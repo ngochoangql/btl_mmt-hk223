@@ -562,7 +562,7 @@ function createsession($teacher, $cmid, $avatar, $nombre, $session, $mail, $jits
     echo "api.addListener('videoConferenceJoined', () => {\n";
     echo "api.executeCommand('displayName', '".$nombre."');\n";
     echo "api.executeCommand('avatarUrl', '".$avatar."');\n";
-    echo "});\n";
+    echo "});</script>\n";
     $navigator = $_SERVER['HTTP_USER_AGENT'];
 
     $cm = get_coursemodule_from_id('jitsi', $cmid, 0, false, MUST_EXIST);
