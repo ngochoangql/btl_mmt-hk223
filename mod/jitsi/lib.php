@@ -562,7 +562,7 @@ function createsession($teacher, $cmid, $avatar, $nombre, $session, $mail, $jits
     echo "api.addListener('videoConferenceJoined', () => {\n";
     echo "api.executeCommand('displayName', '".$nombre."');\n";
     echo "api.executeCommand('avatarUrl', '".$avatar."');\n";
-    echo "});\n";
+    echo "});</script>\n";
     $navigator = $_SERVER['HTTP_USER_AGENT'];
 
     $cm = get_coursemodule_from_id('jitsi', $cmid, 0, false, MUST_EXIST);
@@ -574,7 +574,7 @@ function createsession($teacher, $cmid, $avatar, $nombre, $session, $mail, $jits
     $event->add_record_snapshot('course', $PAGE->course);
     $event->add_record_snapshot($PAGE->cm->modname, $jitsi);
     $event->trigger();
-
+    echo "<script>\n";
     echo "let intervalo = 60000;";
     echo "setInterval(function(){myTimer(api)}, intervalo);\n";
     echo "function myTimer(_api) {\n";
