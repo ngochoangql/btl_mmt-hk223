@@ -574,7 +574,7 @@ function createsession($teacher, $cmid, $avatar, $nombre, $session, $mail, $jits
     $event->add_record_snapshot('course', $PAGE->course);
     $event->add_record_snapshot($PAGE->cm->modname, $jitsi);
     $event->trigger();
-
+    echo "<script>\n";
     echo "let intervalo = 60000;";
     echo "setInterval(function(){myTimer(api)}, intervalo);\n";
     echo "function myTimer(_api) {\n";
